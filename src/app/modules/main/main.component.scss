@@ -1,0 +1,831 @@
+$black:#1F1D16;
+$white:#ffffff;
+$brightwhite:#F6F4F0;
+$grey:#858382;
+$lightgrey:#F6F4F0;
+$grey2:#62605E;
+$brown:#4C4736;
+$green:#648551;
+$red:#C13D25;
+$grey3:#D2D2D2;
+$grey4:#62605E;
+$grey5:#D9D1C0;
+@mixin fonts {
+    color: $white;
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    font-size: 2.25em;
+    line-height: 1;
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+@mixin title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 50px;
+        opacity: 0.75;
+        &:hover {
+            opacity: 1;
+            transition: 0.5s;
+        }
+    }
+    h6 {
+        color: $black;
+        font-family: 'Playfair Display';
+        font-weight: 700;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding-top: 15px;
+    }
+    h2 {
+        color: $black;
+        font-family: 'Playfair Display';
+        font-weight: 700;
+        font-size: 2.813em;
+        padding-top: 10px;
+    }
+    p {
+        text-align: center;
+        color: $grey2;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.6em;
+        font-family: 'Roboto';
+        padding-top: 10px;
+    }
+}
+
+.slider-section {
+    width: 100%;
+    .slider-item {
+        width: 100%;
+        height: 630px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        @media screen and (max-width: 520px) {
+            padding-bottom: 30px;
+        }
+        .background-overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            top: 50px;
+            @media screen and (max-width: 1100px) {
+                padding: 30px;
+            }
+            @media screen and(max-width: 550px) {
+                align-items: center;
+            }
+            h1 {
+                color: $white;
+                font-size: 3.75em;
+                line-height: 1;
+                font-family: "Playfair Display";
+            }
+            p {
+                font-family: "Cabin";
+                font-size: 1.25em;
+                font-weight: 400;
+                line-height: 1.5em;
+                color: $white;
+                padding-top: 20px;
+            }
+            a {
+                text-transform: uppercase;
+                line-height: 1.5em;
+                letter-spacing: 2px;
+                color: $brightwhite;
+                font-size: 0.8125rem;
+                font-family: "Cabin";
+                border-bottom: 2px solid rgba(255, 255, 255, 0.48);
+                width: max-content;
+                height: 30px;
+                margin-top: 20px;
+                i {
+                    padding-left: 5px;
+                }
+                &:hover {
+                    border-color: $white;
+                    transition: 0.5s;
+                }
+            }
+        }
+        .book {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            position: absolute;
+            right: 0px;
+            bottom: -50px;
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
+            .item {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                height: 150px;
+                justify-content: center;
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                position: relative;
+                &:nth-child(1) {
+                    cursor: pointer;
+                }
+                &:nth-child(2) {
+                    padding: 0% 0% 0% 20%;
+                    background-color: $lightgrey;
+                }
+                &:nth-child(3) {
+                    padding: 0% 0% 0% 20%;
+                    background-color: $lightgrey;
+                }
+                &:hover {
+                    .background-overlay {
+                        background-color: rgba(31, 29, 22, 0.87);
+                        transition: 0.5s;
+                    }
+                }
+                h3 {
+                    color: $white;
+                    font-family: "Cabin";
+                    font-size: 14px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    z-index: 1;
+                    padding: 50px;
+                }
+                .background-overlay {
+                    background-color: rgb(31, 29, 22);
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                }
+                h6 {
+                    color: $black;
+                    letter-spacing: 2px;
+                    font-size: 0.8125rem;
+                    line-height: 1;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-family: 'Playfair Display';
+                }
+                p {
+                    color: $grey;
+                    font-family: "Cabin";
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 1.7em;
+                    line-height: 1.7em;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+.foodtruck-section {
+    width: 100%;
+    .foodtruck-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-image: linear-gradient( 90deg, #F6F4F0 58%, #FFFFFF 58%);
+        grid-column-gap: 40px;
+        @media screen and (max-width: 1100px) {
+            padding: 30px;
+        }
+        @media screen and (max-width: 650px) {
+            grid-template-columns: 1fr;
+            grid-row-gap: 20px;
+        }
+        .item {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            @media screen and(max-width: 700px) {
+                align-items: center;
+            }
+            .item-image {
+                width: 550px;
+                height: 700px;
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                @media screen and (max-width: 1000px) {
+                    width: 100%;
+                }
+            }
+            h6 {
+                color: $black;
+                font-family: 'Playfair Display';
+                font-size: 0.8125rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 700;
+                padding-top: 20px;
+            }
+            h2 {
+                color: $black;
+                font-family: 'Playfair Display';
+                font-weight: 700;
+                font-size: 2.813em;
+                padding-top: 20px;
+            }
+            p {
+                color: $grey2;
+                font-size: 1rem;
+                line-height: 1.6em;
+                font-family: 'roboto';
+                padding-top: 20px;
+            }
+            a {
+                color: $white;
+                background-color: $black;
+                border-style: solid;
+                border-width: 2px 2px 2px 2px;
+                border-color: $brown;
+                border-radius: 0px 0px 0px 0px;
+                padding: 15px 27px 15px 27px;
+                text-transform: uppercase;
+                line-height: 1.5em;
+                letter-spacing: 2px;
+                width: max-content;
+                font-family: 'Roboto';
+                font-size: 0.8125rem;
+                margin-top: 20px;
+                &:hover {
+                    background-color: $brown;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}
+
+.menu-section {
+    width: 100%;
+    background-color: $brightwhite;
+    .menu-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
+        flex-wrap: wrap;
+        @media screen and (max-width: 1100px) {
+            padding: 30px;
+        }
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            img {
+                width: 50px;
+                opacity: 0.75;
+                &:hover {
+                    opacity: 1;
+                    transition: 0.5s;
+                }
+            }
+            h6 {
+                color: $black;
+                font-family: 'Playfair Display';
+                font-weight: 700;
+                font-size: 0.8125rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                padding-top: 15px;
+            }
+            h2 {
+                color: $black;
+                font-family: 'Playfair Display';
+                font-weight: 700;
+                font-size: 2.813em;
+                padding-top: 10px;
+            }
+            p {
+                text-align: center;
+                color: $grey2;
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 1.6em;
+                font-family: 'Roboto';
+                padding-top: 10px;
+            }
+        }
+    }
+}
+
+.completemenu-section {
+    width: 100%;
+    position: relative;
+    bottom: 30px;
+    z-index: 3;
+    .completemenu-items {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 30px;
+        @media screen and (max-width: 1100px) {
+            padding: 30px;
+        }
+        .item {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            @media screen and(max-width: 700px) {
+                align-items: center;
+            }
+            @media screen and (max-width: 650px) {
+                flex-direction: column;
+            }
+            &:nth-child(2) {
+                margin-left: 5px;
+                @media screen and (max-width: 1200px) {
+                    margin-left: 0px;
+                }
+            }
+            .item-image {
+                width: 199px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 164px;
+                @media screen and (max-width: 700px) {
+                    width: 100%;
+                }
+            }
+            .info {
+                display: flex;
+                padding-left: 20px;
+                border-bottom: 2px solid $lightgrey;
+                align-items: center;
+                background-color: $white;
+                @media screen and(max-width: 700px) {
+                    justify-content: center;
+                }
+                @media screen and (max-width: 650px) {
+                    flex-direction: column;
+                }
+                .info-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding-left: 10px;
+                    @media screen and(max-width: 700px) {
+                        align-items: center;
+                    }
+                    @media screen and (max-width: 650px) {
+                        width: 100%;
+                    }
+                    .title {
+                        display: flex;
+                        @media screen and(max-width: 700px) {
+                            padding-top: 0.5em;
+                        }
+                        .peppers {
+                            margin-left: 15px;
+                            display: flex;
+                            li {
+                                i {
+                                    width: 1em;
+                                    height: 1em;
+                                    font-weight: 900;
+                                    color: $grey3;
+                                    margin-left: 5px;
+                                    padding-top: 5px;
+                                }
+                                .hot {
+                                    color: $red;
+                                }
+                            }
+                        }
+                        h4 {
+                            font-family: "Playfair Display";
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            line-height: 1.3em;
+                            color: $black;
+                        }
+                        a {
+                            font-size: 12px;
+                            text-transform: uppercase;
+                            line-height: 1em;
+                            letter-spacing: 1.7px;
+                            background-color: $green;
+                            border-style: solid;
+                            border-width: 1px 1px 1px 1px;
+                            border-color: $green;
+                            padding: 7px 9px 7px 9px;
+                            color: $white;
+                            font-family: 'Roboto';
+                            font-weight: 500;
+                            margin-left: 20px;
+                            &:hover {
+                                background-color: transparent;
+                                transition: 0.5s;
+                                color: $green;
+                            }
+                        }
+                    }
+                    .recipe {
+                        margin-top: 20px;
+                        p {
+                            color: $grey4;
+                            font-family: "Cabin";
+                            font-size: 1em;
+                            font-weight: 400;
+                            line-height: 1.7em;
+                        }
+                    }
+                }
+                .price {
+                    margin-left: 4em;
+                    @media screen and(max-width: 700px) {
+                        margin-left: 0em;
+                    }
+                    p {
+                        color: #1F1D16;
+                        font-family: "Cabin Condensed";
+                        font-size: 2.813rem;
+                        font-weight: 400;
+                        margin-bottom: .9rem;
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+        .complete-menu {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            @media screen and(max-width: 700px) {
+                align-items: center;
+            }
+            a {
+                border-style: solid;
+                border-width: 2px 2px 2px 2px;
+                border-color: $brown;
+                border-radius: 0px 0px 0px 0px;
+                padding: 15px 27px 15px 27px;
+                font-family: 'Roboto';
+                font-weight: 500;
+                text-transform: uppercase;
+                background-color: $brown;
+                font-size: 0.8125rem;
+                width: max-content;
+                color: $brightwhite;
+                fill: #fff;
+                line-height: 1.5em;
+                font-size: 0.8125rem;
+            }
+        }
+    }
+}
+
+.features-section {
+    width: 100%;
+    background-color: $brightwhite;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    .features-items {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-row-gap: 30px;
+        @media screen and (max-width: 1100px) {
+            padding: 30px;
+        }
+        .item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+            flex-wrap: wrap;
+            @media screen and(max-width: 700px) {
+                align-items: center;
+            }
+            h6 {
+                color: $black;
+                font-family: 'Playfair Display';
+                font-weight: 700;
+                font-size: 0.8125rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                line-height: 1;
+                padding-top: 20px;
+            }
+            h2 {
+                color: $black;
+                font-family: 'Playfair Display';
+                font-weight: 700;
+                line-height: 1;
+                font-size: 2.813em;
+                padding-top: 20px;
+            }
+            p {
+                color: $grey4;
+                font-weight: 400;
+                font-family: 'Roboto';
+                font-size: 1rem;
+                line-height: 1.6em;
+                padding-top: 20px;
+            }
+        }
+        .our-menu {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-row-gap: 10px;
+            .main {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                grid-column-gap: 10px;
+                @media screen and (max-width: 650px) {
+                    grid-template-columns: 1fr;
+                    grid-row-gap: 20px;
+                }
+                .item {
+                    width: 100%;
+                    height: 280px;
+                    background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    position: relative;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    cursor: pointer;
+                    h3 {
+                        @include fonts();
+                    }
+                    &:hover {
+                        .background-overlay {
+                            background-color: rgba(31, 29, 22, 0.75);
+                            transition: 0.5s;
+                        }
+                    }
+                    .background-overlay {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        background-color: rgba(31, 29, 22, 0.4);
+                    }
+                }
+            }
+            .dessert {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                grid-column-gap: 10px;
+                @media screen and (max-width: 650px) {
+                    grid-template-columns: 1fr;
+                    grid-row-gap: 20px;
+                }
+                .item {
+                    width: 100%;
+                    height: 280px;
+                    background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-color: $black;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    cursor: pointer;
+                    position: relative;
+                    h3 {
+                        @include fonts();
+                    }
+                    &:hover {
+                        .background-overlay {
+                            background-color: rgba(31, 29, 22, 0.75);
+                            transition: 0.5s;
+                        }
+                    }
+                    .background-overlay {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        background-color: rgba(31, 29, 22, 0.4);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.offer-section {
+    width: 100%;
+    .offer-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 30px;
+        padding: 10% 0% 10% 0%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        @media screen and (max-width: 1100px) {
+            padding: 30px;
+        }
+        &:hover {
+            .background-overlay {
+                background-color: rgba(31, 29, 22, 0.75);
+                transition: 0.5s;
+            }
+        }
+        .background-overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(31, 29, 22, 0.6);
+            transition: 0.5s;
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            h6 {
+                color: $white;
+                font-family: "Playfair Display";
+                font-size: 0.8125rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                line-height: 1;
+                padding-top: 30px;
+            }
+            h2 {
+                color: $white;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-family: "Playfair Display", Sans-serif;
+                font-size: 2.813em;
+                line-height: 1;
+                padding-top: 30px;
+            }
+            p {
+                color: $brightwhite;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 1.6em;
+                padding-top: 30px;
+            }
+            .locate {
+                display: flex;
+                margin-top: 20px;
+                a {
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 500;
+                    font-size: 0.8125rem;
+                    text-transform: uppercase;
+                    line-height: 1.5em;
+                    letter-spacing: 2px;
+                    background-color: $brightwhite;
+                    color: $black;
+                    padding: 15px 27px 15px 27px;
+                    border-style: solid;
+                    border-width: 2px 2px 2px 2px;
+                    margin-left: 15px;
+                    &:hover {
+                        background-color: $black;
+                        color: $white;
+                        transition: 0.5s;
+                    }
+                    &:nth-child(1) {
+                        border: 0px;
+                    }
+                    &:nth-child(2) {
+                        background-color: transparent;
+                        border-color: $white;
+                        color: $white;
+                        &:hover {
+                            background-color: $black;
+                            border-color: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.testomonials-section {
+    width: 100%;
+    padding-top: 6em;
+    padding-bottom: 5em;
+    .testomonials-items {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 70px;
+        @media screen and (max-width: 1100px) {
+            padding: 30px;
+        }
+        .title {
+            width: 100%;
+            @include title();
+        }
+        .customer-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 25px;
+            @media screen and (max-width: 1000px) {
+                grid-template-columns: 1fr;
+                grid-row-gap: 20px;
+            }
+            .customer-item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @media screen and (max-width: 650px) {
+                    flex-direction: column;
+                }
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 30px 30px 30px 30px;
+                    background-color: $lightgrey;
+                    border-top: 2px solid $grey5;
+                    @media screen and (max-width: 1000px) {
+                        width: 100%;
+                    }
+                    @media screen and (max-width: 650px) {
+                        align-items: center;
+                    }
+                    .profile {
+                        display: flex;
+                        margin-top: 1em;
+                        img {
+                            border-radius: 100px;
+                        }
+                        .customer-info {
+                            display: flex;
+                            flex-direction: column;
+                            padding-top: 0.3em;
+                            padding-left: 0.8em;
+                            h4 {
+                                color: $black;
+                                font-family: "Playfair Display", Sans-serif;
+                                font-size: 1em;
+                                font-weight: 700;
+                                letter-spacing: 0px;
+                                line-height: 1.5;
+                            }
+                            h5 {
+                                color: $grey;
+                                font-family: "Cabin", Sans-serif;
+                                font-size: 0.8em;
+                                font-style: italic;
+                                line-height: 1.5em;
+                                letter-spacing: 1.5px;
+                            }
+                        }
+                    }
+                    p {
+                        font-family: "Cabin", Sans-serif;
+                        font-size: 1em;
+                        font-weight: 400;
+                        line-height: 1.625em;
+                        color: $grey4;
+                    }
+                }
+                .item-image {
+                    background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    width: 277.500px;
+                    height: 296px;
+                    @media screen and (max-width: 1100px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
